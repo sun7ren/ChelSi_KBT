@@ -1,3 +1,9 @@
+## Current Progress<img width="1440" height="777" alt="Screenshot 2025-09-28 at 6 30 54 PM" src="https://github.com/user-attachments/assets/0336b858-c23a-44cc-ad0e-30eb73fb54d6" />
+
+<img width="1440" height="776" alt="Screenshot 2025-09-28 at 6 30 43 PM" src="https://github.com/user-attachments/assets/ebad88ec-c7f3-4e2d-8f2e-9118640d21cc" />
+<img width="1440" height="777" alt="Screenshot 2025-09-28 at 6 30 54 PM" src="https://github.com/user-attachments/assets/b97942f3-b310-4134-9385-63bc9d5ef281" />
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

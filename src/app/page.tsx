@@ -1,120 +1,117 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
-import Step1 from "./acid-base/step1";
-import Step2 from "./acid-base/step2";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import Header from "@/components/ui/Header";
+import Image from "next/image";
+import Card from "@/components/ui/card";
+import cardsData from "./data/cardsData.json"; 
+
+type TabKey = "AcidsBases" | "AtomBonds" | "Energy" | "Electrochemistry" | "Reaction";
+type CardData = { 
+  image: string; 
+  title: string; 
+  description: string; 
+  href: string 
+};
 
 export default function Home() {
-  const steps = [
-    { 
-      id: "step1", 
-      title: "Step 1: Apparatus", 
-      component: <Step1 />, 
-      description: "Select 5 apparatus to be used for acid-base neutralization." 
-    },
-    { 
-      id: "step2", 
-      title: "Step 2: Chemicals", 
-      component: <Step2 />, 
-      description: "Identify the three chemicals needed" 
-    },
-    { 
-      id: "step3", 
-      title: "Step 3: Pre-Experiment", 
-      component: null, 
-      description: "Prior to starting, take precautionary actions such as wearing goggles and rinsing apparatus." 
-    },
-    { 
-      id: "step4", 
-      title: "Step 4: Experiment", 
-      component: null, 
-      description: "Set up the apparatus, prepare solutions, and begin titration by adding base to acid slowly." 
-    },
-    { 
-      id: "step5", 
-      title: "Step 5: Titration", 
-      component: null, 
-      description: "Approach the endpoint carefully, drop by drop, until a faint pink color appears." 
-    },
-    { 
-      id: "step6", 
-      title: "Step 6: Results", 
-      component: null, 
-      description: "Record burette readings, calculate average titre, and analyze results." 
-    },
-  ];
-
-  const [activeStep, setActiveStep] = useState("step1");
+  const tabs: TabKey[] = ["AcidsBases", "AtomBonds", "Energy", "Electrochemistry", "Reaction"];
+  const [activeTab, setActiveTab] = useState<TabKey>(tabs[0]);
 
   return (
-    <div className="font-sans grid grid-rows-[auto_1fr_auto] min-h-screen bg-white">
-      {/* HEADER */}
-      <header className="row-start-1 w-full flex flex-row items-center gap-4 p-6 bg-white shadow-sm">
-        <Image src="/logo.png" alt="ChelSi logo" width={100} height={30} />
-        <div className="flex flex-col">
-          <h1 className="text-4xl sm:text-4xl font-bold text-blue-800">ChelSi</h1>
-          <p className="mt-1 text-lg text-blue-600 italic">Your Lab, Anytime, Anywhere.</p>
+    <div className="min-h-screen flex flex-col">
+      {/* Header */}
+      <Header
+        center={
+          <input
+            type="text"
+            placeholder="Search experiments..."
+            className="w-200 border-2 px-3 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        }
+        right={
+          <>
+            <select className="border px-3 py-2 rounded bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <option>Explore</option>
+              <option>Acids, Bases</option>
+              <option>Atom Bonds</option>
+              <option>Energy</option>
+              <option>Electrochemistry</option>
+              <option>Reaction</option>
+            </select>
+            <button className="px-4 py-2 text-blue-600 border border-blue-600 rounded hover:bg-blue-50 transition">
+              Login
+            </button>
+            <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+              Register
+            </button>
+          </>
+        }
+      />
+
+      {/* Info */}
+      <main className="flex-1">
+        <div className="relative">
+          <Image
+            src="/starting.png"
+            alt="ChelSi logo"
+            className="object-cover w-full h-[400px]"
+            width={1920}
+            height={1080}
+            style={{ zIndex: 0 }}
+          />
+          <div
+            className="absolute top-75 left-40 -translate-x-1/2 -translate-y-1/2"
+            style={{ zIndex: 1, pointerEvents: "none" }} 
+          >
+            <button
+              className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition pointer-events-auto"
+            >
+              Learn More
+            </button>
+          </div>
         </div>
-      </header>
 
-      {/* MAIN */}
-      <main className="row-start-2 flex justify-center px-6 py-10">
-        <div className="max-w-screen-xl w-full flex flex-col gap-10">
-          {/* Intro */}
-          <div className="text-center">
-            <h2 className="font-bold text-3xl mb-4 text-blue-900">Acid-Base Titration Experiment</h2>
-            <p className="mb-2">
-              To determine the concentration of an unknown acid or base by neutralizing it with a base or acid of known concentration.
+        {/* Tabs */}
+        <div className="border-b flex justify-center gap-8 mt-6">
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              type="button"
+              onClick={() => setActiveTab(tab)}
+              className={`cursor-pointer pb-2 text-lg font-medium ${
+                activeTab === tab
+                  ? "text-blue-600 border-b-2 border-blue-600"
+                  : "text-gray-500 hover:text-gray-700"
+              }`}
+            >
+              {tab.replace(/([A-Z])/g, " $1").trim()}
+            </button>
+          ))}
+        </div>
+
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
+          {cardsData[activeTab]?.length > 0 ? (
+            cardsData[activeTab].map((card: CardData) => (
+              <Card
+                key={card.title}
+                image={card.image}
+                title={card.title}
+                description={card.description}
+                href={card.href}
+              />
+            ))
+          ) : (
+            <p className="text-center col-span-full text-gray-500 mt-6">
+              No experiments available for this tab.
             </p>
-            <p className="mb-0">Acid + Base → Salt + Water</p>
-          </div>
-
-          <div className="flex gap-8 items-start">
-            {/* Left: Simulation Screen */}
-            <div className="flex-1 bg-white rounded-2xl border border-blue-200 shadow-lg p-4 min-h-[400px]">
-              {steps.find((s) => s.id === activeStep)?.component ?? (
-                <p className="text-gray-500">No simulation available for this step.</p>
-              )}
-            </div>
-
-            {/* Right: Steps Accordion */}
-            <div className="w-96">
-              <Accordion
-                type="single"
-                collapsible
-                value={activeStep}
-                onValueChange={(val) => val && setActiveStep(val)}
-                className="w-full space-y-4"
-              >
-                {steps.map((step) => (
-                  <AccordionItem
-                    key={step.id}
-                    value={step.id}
-                    className="rounded-xl border border-blue-200 shadow-sm overflow-hidden"
-                  >
-                    <AccordionTrigger
-                      className="px-4 py-4 text-left font-semibold transition 
-                        bg-blue-50 hover:bg-blue-100 
-                        data-[state=open]:bg-blue-800 data-[state=open]:text-white 
-                        data-[state=open]:border-l-4 data-[state=open]:border-orange-500"
-                    >
-                      {step.title}
-                    </AccordionTrigger>
-                    <AccordionContent className="px-4 py-3 text-sm bg-white text-gray-700">
-                      {step.description}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
-          </div>
+          )}
         </div>
       </main>
 
-      {/* FOOTER */}
-      <footer className="row-start-3 flex justify-center items-center bg-blue-800 text-white p-4 mt-8 shadow-inner">
+      {/* Footer */}
+      <footer className="flex justify-center items-center bg-blue-800 text-white p-4 mt-8 shadow-inner">
         Informatics Engineering × Chemical Engineering 2025
       </footer>
     </div>

@@ -1,0 +1,60 @@
+{
+  "AcidsBases": [
+    {
+      "image": "/acidsbases.png",
+      "title": "Acids & Bases Lab",
+      "description": "Simulate acid-base reactions safely in a virtual environment.",
+      "href": "/experiment1"
+    },
+    {
+      "image": "/logo.png",
+      "title": "Chemical Reactions",
+      "description": "Explore different types of chemical reactions including acid-base, precipitation, and redox.",
+      "href": "/reactions"
+    }
+  ],
+  "AtomBonds": [
+    {
+      "image": "/logo.png",
+      "title": "Atoms & Bonds Lab",
+      "description": "Learn about atomic structures, bonding, and molecular geometry interactively.",
+      "href": "/atoms-bonds"
+    },
+    {
+      "image": "/logo.png",
+      "title": "Molecules",
+      "description": "Visualize molecules and understand their properties and interactions.",
+      "href": "/molecules"
+    }
+  ],
+  "Energy": [
+    {
+      "image": "/logo.png",
+      "title": "Energy Lab",
+      "description": "Experiment with energy transfer, transformations, and conservation.",
+      "href": "/energy"
+    },
+    {
+      "image": "/logo.png",
+      "title": "Forces & Motion",
+      "description": "Explore the physics of forces, motion, and work-energy relationships.",
+      "href": "/forces-motion"
+    }
+  ],
+  "Electrochemistry": [
+    {
+      "image": "/logo.png",
+      "title": "Electrochemistry Lab",
+      "description": "Study redox reactions, electrolysis, and battery experiments virtually.",
+      "href": "/electrochemistry"
+    }
+  ],
+  "Reaction": [
+    {
+      "image": "/logo.png",
+      "title": "Reaction Types",
+      "description": "Classify and analyze various chemical reactions in a controlled virtual lab.",
+      "href": "/reaction-types"
+    }
+  ]
+}

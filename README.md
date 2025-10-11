@@ -1,6 +1,8 @@
 ## Current Progress
 
 <img width="1440" height="813" alt="Screenshot 2025-10-09 at 2 17 02 PM" src="https://github.com/user-attachments/assets/35f5f28e-e76f-4dd2-9daa-81321b249285" />
+use (/logged_in) to see
+<img width="2560" height="1600" alt="image" src="https://github.com/user-attachments/assets/e94d0201-c150-460e-b528-552661a46a68" />
 <img width="1440" height="776" alt="Screenshot 2025-09-28 at 6 30 43 PM" src="https://github.com/user-attachments/assets/ebad88ec-c7f3-4e2d-8f2e-9118640d21cc" />
 <img width="1440" height="777" alt="Screenshot 2025-09-28 at 6 30 54 PM" src="https://github.com/user-attachments/assets/b97942f3-b310-4134-9385-63bc9d5ef281" />
 

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Header from "@/components/ui/Header";
+import { useRouter } from 'next/navigation';
 
 type StepCard = {
   id: string;
@@ -65,7 +66,8 @@ function CourseLikeCard({
 }
 
 export default function Home() {
-  const [activeStep, setActiveStep] = useState("step1");
+  const [activeStep, setActiveStep] = useState("");
+  const router = useRouter();
 
   const cards: StepCard[] = [
     { id: "step1", title: "Acids Bases", desc: "Simulate acid-base reactions safely in a virtual environment.", img: "/cards/acidb.gif" },
@@ -129,9 +131,10 @@ export default function Home() {
                 key={c.id}
                 card={c}
                 active={activeStep === c.id}
-                onHoverEnter={() => setActiveStep(c.id)}
+                onHoverEnter={() => {setActiveStep(c.id); activeStep == 'step1' ? router.push('/experiment1'): router.push('')}}
                 onHoverLeave={() => setActiveStep("step1")}
               />
+
             ))}
           </div>
         </div>

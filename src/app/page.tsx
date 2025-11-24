@@ -5,6 +5,7 @@ import Header from "@/components/ui/Header";
 import Image from "next/image";
 import Card from "@/components/ui/card";
 import cardsData from "./data/cardsData.json"; 
+import Link from "next/link";
 
 type TabKey = "AcidsBases" | "AtomBonds" | "Energy" | "Electrochemistry" | "Reaction";
 type CardData = { 
@@ -39,12 +40,12 @@ export default function Home() {
               <option>Electrochemistry</option>
               <option>Reaction</option>
             </select>
-            <button className="px-4 py-2 text-blue-600 border border-blue-600 rounded hover:bg-blue-50 transition">
+            <Link href="/authentication/login" className="px-4 py-2 text-blue-600 border border-blue-600 rounded hover:bg-blue-50 transition">
               Login
-            </button>
-            <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+            </Link>
+            <Link href="/authentication/signup" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
               Register
-            </button>
+            </Link>
           </>
         }
       />

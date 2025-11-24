@@ -15,6 +15,10 @@ type CardData = {
   href: string 
 };
 
+const backgroundImages = {
+  home: "bg-[url('/starting.png')] bg-cover bg-center",
+};
+
 export default function Home() {
   const tabs: TabKey[] = ["AcidsBases", "AtomBonds", "Energy", "Electrochemistry", "Reaction"];
   const [activeTab, setActiveTab] = useState<TabKey>(tabs[0]);
@@ -52,15 +56,15 @@ export default function Home() {
 
       {/* Info */}
       <main className="flex-1">
-        <div className="relative">
-          <Image
+        <div className={`${backgroundImages.home} relative h-96 flex items-center justify-center mb-6`}>
+          {/* <Image
             src="/starting.png"
             alt="ChelSi logo"
             className="object-cover w-full h-[400px]"
             width={1920}
             height={1080}
             style={{ zIndex: 0 }}
-          />
+          /> */}
           <div
             className="absolute top-75 left-40 -translate-x-1/2 -translate-y-1/2"
             style={{ zIndex: 1, pointerEvents: "none" }} 

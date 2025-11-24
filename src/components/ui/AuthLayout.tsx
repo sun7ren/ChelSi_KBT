@@ -14,7 +14,7 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
           {/* Left Column: Illustration */}
           <div className="hidden md:flex items-center justify-center p-12">
             <Image
-              src="/3.gif"
+              src="/gifChem.gif"
               alt="Animated chemistry experiment"
               width={500}
               height={500}

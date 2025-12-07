@@ -4,6 +4,11 @@ import { useState } from "react";
 import Step0 from "./acid-base/step0";
 import Step1 from "./acid-base/step1";
 import Step2 from "./acid-base/step2";
+import Step3 from "./acid-base/step3";
+import Step4 from "./acid-base/step4";
+import Step5 from "./acid-base/step5";
+import Step6 from "./acid-base/step6";
+
 import {
   Accordion,
   AccordionItem,
@@ -35,28 +40,28 @@ export default function Home() {
     {
       id: "step3",
       title: "Step 3: Pre-Experiment",
-      component: null,
+      component: <Step3 />,
       description:
         "Prior to starting, take precautionary actions such as wearing goggles and rinsing apparatus.",
     },
     {
       id: "step4",
       title: "Step 4: Experiment",
-      component: null,
+      component: <Step4 />,
       description:
         "Set up the apparatus, prepare solutions, and begin titration by adding base to acid slowly.",
     },
     {
       id: "step5",
       title: "Step 5: Titration",
-      component: null,
+      component: <Step5 />,
       description:
         "Approach the endpoint carefully, drop by drop, until a faint pink color appears.",
     },
     {
       id: "step6",
       title: "Step 6: Results",
-      component: null,
+      component: <Step6 />,
       description:
         "Record burette readings, calculate average titre, and analyze results.",
     },

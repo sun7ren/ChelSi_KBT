@@ -43,7 +43,6 @@ export default function Home() {
               <option>Electrochemistry</option>
               <option>Reaction</option>
             </select>
-            {/* ✅ Reusable auth block */}
             <AuthButton />
           </>
         }

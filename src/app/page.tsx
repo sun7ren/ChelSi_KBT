@@ -6,6 +6,8 @@ import Image from "next/image";
 import Card from "@/components/ui/card";
 import cardsData from "./data/cardsData.json"; 
 import Link from "next/link";
+import AuthButton from "@/components/ui/AuthButton";
+
 
 type TabKey = "AcidsBases" | "AtomBonds" | "Energy" | "Electrochemistry" | "Reaction";
 type CardData = { 
@@ -30,6 +32,7 @@ export default function Home() {
             className="w-200 border-2 px-3 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         }
+        
         right={
           <>
             <select className="border px-3 py-2 rounded bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
@@ -40,15 +43,12 @@ export default function Home() {
               <option>Electrochemistry</option>
               <option>Reaction</option>
             </select>
-            <Link href="/login" className="px-4 py-2 text-blue-600 border border-blue-600 rounded hover:bg-blue-50 transition">
-                Login
-            </Link>
-            <Link href="/signup" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
-                Register
-            </Link>
+            {/* ✅ Reusable auth block */}
+            <AuthButton />
           </>
         }
       />
+
 
       {/* Info */}
       <main className="flex-1">

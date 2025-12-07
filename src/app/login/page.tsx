@@ -32,6 +32,7 @@ export default function LoginPage() {
   };
 
   return (
+    
     <AuthLayout>
       <div className="w-full max-w-md">
         <div className="mb-10 text-left">

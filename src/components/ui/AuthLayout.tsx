@@ -10,7 +10,7 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
       <main className="flex-grow flex items-center justify-center">
         {/* Max-width container for the two-column grid */}
         <div className="w-full max-w-6xl grid md:grid-cols-2 items-center">
-          
+
           {/* Left Column: Illustration */}
           <div className="hidden md:flex items-center justify-center p-12">
             <Image
@@ -29,6 +29,11 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
           </div>
         </div>
       </main>
+
+      {/* FOOTER */}
+      <footer className="flex justify-center items-center bg-blue-800 text-white p-4 mt-auto shadow-inner">
+        Informatics Engineering × Chemical Engineering 2025
+      </footer>
     </div>
   );
 };

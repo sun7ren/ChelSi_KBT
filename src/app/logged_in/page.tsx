@@ -2,9 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Header from "@/components/ui/Header";
+import AppHeader from "@/components/ui/AppHeader";
 import { supabase } from "@/lib/supabaseClient";
-import AuthButton from "@/components/ui/AuthButton";
 
 type Lab = {
   id: number;
@@ -57,7 +56,9 @@ function CourseLikeCard({
         <h3 className="mt-2 text-base font-semibold text-gray-900">
           {lab.title}
         </h3>
-        <p className="mt-1 text-sm text-gray-600 line-clamp-2">{lab.description}</p>
+        <p className="mt-1 text-sm text-gray-600 line-clamp-2">
+          {lab.description}
+        </p>
         <div className="mt-3 text-xs text-gray-500">Course • Guided</div>
       </div>
     </div>
@@ -73,11 +74,11 @@ export default function LoggedInHome() {
     const fetchLabs = async () => {
       setLoading(true);
       const { data, error } = await supabase
-        .from('labs')
-        .select('id, title, description, image_url, href');
-      
+        .from("labs")
+        .select("id, title, description, image_url, href");
+
       if (error) {
-        console.error('Error fetching labs:', error);
+        console.error("Error fetching labs:", error);
       } else if (data && data.length > 0) {
         setLabs(data);
         setActiveLabId(data[0].id);
@@ -90,23 +91,18 @@ export default function LoggedInHome() {
 
   return (
     <div className="font-sans grid grid-rows-[auto_1fr_auto] min-h-screen bg-gray-50">
-      <Header
-        center={
-          <input
-            type="text"
-            placeholder="Search experiments..."
-            className="w-full max-w-sm border-2 px-3 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        }
-        right={<AuthButton />}
-      />
+      <AppHeader />
 
       <main className="row-start-2 flex justify-center px-4 pt-10">
         <div className="w-full max-w-6xl flex flex-col gap-6">
           <div className="flex items-end justify-between px-6">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900">Lab Experiments</h2>
-              <p className="text-sm text-gray-600">Choose a lab to begin your virtual experiment.</p>
+              <h2 className="text-2xl font-bold text-gray-900">
+                Lab Experiments
+              </h2>
+              <p className="text-sm text-gray-600">
+                Choose a lab to begin your virtual experiment.
+              </p>
             </div>
           </div>
 
@@ -115,20 +111,29 @@ export default function LoggedInHome() {
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
               {labs.map((lab) => (
-                <Link key={lab.id} href={lab.href || `/experiment/${lab.id}`} className="block">
+                <Link
+                  key={lab.id}
+                  href={lab.href || `/experiment/${lab.id}`}
+                  className="block"
+                >
                   <CourseLikeCard
                     lab={lab}
                     active={activeLabId === lab.id}
                     onHoverEnter={() => setActiveLabId(lab.id)}
-                    onHoverLeave={() => setActiveLabId(labs[0]?.id || null)}
+                    onHoverLeave={() =>
+                      setActiveLabId(labs[0]?.id || null)
+                    }
                   />
                 </Link>
               ))}
             </div>
           )}
-           { !loading && labs.length === 0 && (
-             <p className="text-center col-span-full text-gray-500">No labs available at the moment.</p>
-           )}
+
+          {!loading && labs.length === 0 && (
+            <p className="text-center col-span-full text-gray-500">
+              No labs available at the moment.
+            </p>
+          )}
         </div>
       </main>
 
@@ -138,4 +143,3 @@ export default function LoggedInHome() {
     </div>
   );
 }
-

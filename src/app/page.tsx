@@ -51,26 +51,26 @@ export default function Home() {
 
       {/* Info */}
       <main className="flex-1">
-        <div className="relative">
+        <div className="relative w-full h-[400px] flex justify-center items-center">
           <Image
             src="/starting.png"
             alt="ChelSi logo"
-            className="object-cover w-full h-[400px]"
-            width={1920}
-            height={1080}
+            className="object-cover"
+            fill
+            priority
             style={{ zIndex: 0 }}
           />
+
           <div
-            className="absolute top-75 left-40 -translate-x-1/2 -translate-y-1/2"
-            style={{ zIndex: 1, pointerEvents: "none" }} 
+            className="absolute inset-10 flex justify-start items-end pb-6"
+            style={{ zIndex: 1 }}
           >
-            <button
-              className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition pointer-events-auto"
-            >
+            <button className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
               Learn More
             </button>
           </div>
         </div>
+
 
         {/* Tabs */}
         <div className="border-b flex justify-center gap-8 mt-6">

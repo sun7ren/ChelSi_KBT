@@ -61,7 +61,7 @@ export default function Home() {
       <main className="flex-1">
         <div className="relative w-full h-[400px] flex justify-center items-center">
           <Image
-            src="/starting.png"
+            src="/starting-id.png"
             alt="Logo ChelSi"
             className="object-cover"
             fill

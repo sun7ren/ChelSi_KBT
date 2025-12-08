@@ -4,17 +4,25 @@ import { useState } from "react";
 import Header from "@/components/ui/Header";
 import Image from "next/image";
 import Card from "@/components/ui/card";
-import cardsData from "./data/cardsData.json"; 
+import cardsData from "./data/cardsData.json";
 import Link from "next/link";
 import AuthButton from "@/components/ui/AuthButton";
 
 
 type TabKey = "AcidsBases" | "AtomBonds" | "Energy" | "Electrochemistry" | "Reaction";
-type CardData = { 
-  image: string; 
-  title: string; 
-  description: string; 
-  href: string 
+type CardData = {
+  image: string;
+  title: string;
+  description: string;
+  href: string
+};
+
+const tabNames: Record<TabKey, string> = {
+  AcidsBases: "Asam Basa",
+  AtomBonds: "Ikatan Atom",
+  Energy: "Energi",
+  Electrochemistry: "Elektrokimia",
+  Reaction: "Reaksi"
 };
 
 export default function Home() {
@@ -28,20 +36,20 @@ export default function Home() {
         center={
           <input
             type="text"
-            placeholder="Search experiments..."
+            placeholder="Cari eksperimen..."
             className="w-200 border-2 px-3 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         }
-        
+
         right={
           <>
             <select className="border px-3 py-2 rounded bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-              <option>Explore</option>
-              <option>Acids, Bases</option>
-              <option>Atom Bonds</option>
-              <option>Energy</option>
-              <option>Electrochemistry</option>
-              <option>Reaction</option>
+              <option>Jelajahi</option>
+              <option>Asam, Basa</option>
+              <option>Ikatan Atom</option>
+              <option>Energi</option>
+              <option>Elektrokimia</option>
+              <option>Reaksi</option>
             </select>
             <AuthButton />
           </>
@@ -54,7 +62,7 @@ export default function Home() {
         <div className="relative w-full h-[400px] flex justify-center items-center">
           <Image
             src="/starting.png"
-            alt="ChelSi logo"
+            alt="Logo ChelSi"
             className="object-cover"
             fill
             priority
@@ -65,8 +73,8 @@ export default function Home() {
             className="absolute inset-10 flex justify-start items-end pb-6"
             style={{ zIndex: 1 }}
           >
-            <Link href="/learnmore" className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
-              Learn More
+            <Link href="/about" className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
+              Tentang
             </Link>
           </div>
         </div>
@@ -79,13 +87,12 @@ export default function Home() {
               key={tab}
               type="button"
               onClick={() => setActiveTab(tab)}
-              className={`cursor-pointer pb-2 text-lg font-medium ${
-                activeTab === tab
-                  ? "text-blue-600 border-b-2 border-blue-600"
-                  : "text-gray-500 hover:text-gray-700"
-              }`}
+              className={`cursor-pointer pb-2 text-lg font-medium ${activeTab === tab
+                ? "text-blue-600 border-b-2 border-blue-600"
+                : "text-gray-500 hover:text-gray-700"
+                }`}
             >
-              {tab.replace(/([A-Z])/g, " $1").trim()}
+              {tabNames[tab]}
             </button>
           ))}
         </div>
@@ -104,7 +111,7 @@ export default function Home() {
             ))
           ) : (
             <p className="text-center col-span-full text-gray-500 mt-6">
-              No experiments available for this tab.
+              Tidak ada eksperimen yang tersedia untuk tab ini.
             </p>
           )}
         </div>
@@ -112,7 +119,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="flex justify-center items-center bg-blue-800 text-white p-4 mt-8 shadow-inner">
-        Informatics Engineering × Chemical Engineering 2025
+        Teknik Informatika × Teknik Kimia 2025
       </footer>
     </div>
   );

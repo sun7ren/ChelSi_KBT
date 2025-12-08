@@ -32,7 +32,7 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
 
       {/* FOOTER */}
       <footer className="flex justify-center items-center bg-blue-800 text-white p-4 mt-auto shadow-inner">
-        Informatics Engineering × Chemical Engineering 2025
+        Teknik Informatika × Teknik Kimia 2025
       </footer>
     </div>
   );

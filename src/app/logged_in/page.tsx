@@ -59,7 +59,7 @@ function CourseLikeCard({
         <p className="mt-1 text-sm text-gray-600 line-clamp-2">
           {lab.description}
         </p>
-        <div className="mt-3 text-xs text-gray-500">Course • Guided</div>
+        <div className="mt-3 text-xs text-gray-500">Kursus • Terpandu</div>
       </div>
     </div>
   );
@@ -98,16 +98,16 @@ export default function LoggedInHome() {
           <div className="flex items-end justify-between px-6">
             <div>
               <h2 className="text-2xl font-bold text-gray-900">
-                Lab Experiments
+                Eksperimen Lab
               </h2>
               <p className="text-sm text-gray-600">
-                Choose a lab to begin your virtual experiment.
+                Pilih lab untuk memulai eksperimen virtual Anda.
               </p>
             </div>
           </div>
 
           {loading ? (
-            <p className="text-center text-gray-500">Loading labs...</p>
+            <p className="text-center text-gray-500">Memuat lab...</p>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
               {labs.map((lab) => (
@@ -131,14 +131,14 @@ export default function LoggedInHome() {
 
           {!loading && labs.length === 0 && (
             <p className="text-center col-span-full text-gray-500">
-              No labs available at the moment.
+              Tidak ada lab yang tersedia saat ini.
             </p>
           )}
         </div>
       </main>
 
       <footer className="flex justify-center items-center bg-blue-800 text-white p-4 mt-8 shadow-inner">
-        Informatics Engineering × Chemical Engineering 2025
+        Teknik Informatika × Teknik Kimia 2025
       </footer>
     </div>
   );

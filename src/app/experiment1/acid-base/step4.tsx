@@ -37,7 +37,7 @@ export default function Step4() {
     <DragOrder
       items={items}
       correctOrder={correctOrder}
-      title="Arrange the Experiment Setup Steps"
+      title="Susun Langkah Persiapan Percobaan"
     />
   );
 }

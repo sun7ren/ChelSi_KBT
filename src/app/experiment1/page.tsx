@@ -20,52 +20,51 @@ import AppHeader from "@/components/ui/AppHeader";
 export default function Home() {
   const steps = [
     {
-  id: "step0",
-  title: "Langkah 0: Video Pengantar",
-  component: <Step0 />,
-  description: "Pengantar untuk percobaan Titrasi Asam-Basa.",
-},
-{
-  id: "step1",
-  title: "Langkah 1: Alat",
-  component: <Step1 />,
-  description: "Pilih 5 alat yang akan digunakan untuk proses netralisasi asam-basa.",
-},
-{
-  id: "step2",
-  title: "Langkah 2: Bahan Kimia",
-  component: <Step2 />,
-  description: "Identifikasi tiga bahan kimia yang dibutuhkan.",
-},
-{
-  id: "step3",
-  title: "Langkah 3: Pra-Percobaan",
-  component: <Step3 />,
-  description:
-    "Sebelum memulai, lakukan tindakan pencegahan seperti memakai kacamata pelindung dan membilas alat.",
-},
-{
-  id: "step4",
-  title: "Langkah 4: Percobaan",
-  component: <Step4 />,
-  description:
-    "Siapkan alat, persiapkan larutan, dan mulai titrasi dengan menambahkan basa ke asam secara perlahan.",
-},
-{
-  id: "step5",
-  title: "Langkah 5: Titrasi",
-  component: <Step5 />,
-  description:
-    "Dekati titik akhir secara hati-hati, tetes demi tetes, hingga muncul warna merah muda yang samar.",
-},
-{
-  id: "step6",
-  title: "Langkah 6: Hasil",
-  component: <Step6 />,
-  description:
-    "Catat pembacaan buret, hitung rata-rata titre, dan analisis hasil.",
-},
-
+      id: "step0",
+      title: "Langkah 0: Video Pengantar",
+      component: <Step0 />,
+      description: "Pengantar untuk percobaan Titrasi Asam-Basa.",
+    },
+    {
+      id: "step1",
+      title: "Langkah 1: Alat",
+      component: <Step1 />,
+      description: "Pilih 5 alat yang akan digunakan untuk proses netralisasi asam-basa.",
+    },
+    {
+      id: "step2",
+      title: "Langkah 2: Bahan Kimia",
+      component: <Step2 />,
+      description: "Identifikasi tiga bahan kimia yang dibutuhkan.",
+    },
+    {
+      id: "step3",
+      title: "Langkah 3: Pra-Percobaan",
+      component: <Step3 />,
+      description:
+        "Sebelum memulai, lakukan tindakan pencegahan seperti memakai kacamata pelindung dan membilas alat.",
+    },
+    {
+      id: "step4",
+      title: "Langkah 4: Percobaan",
+      component: <Step4 />,
+      description:
+        "Siapkan alat, persiapkan larutan, dan mulai titrasi dengan menambahkan basa ke asam secara perlahan.",
+    },
+    {
+      id: "step5",
+      title: "Langkah 5: Titrasi",
+      component: <Step5 />,
+      description:
+        "Dekati titik akhir secara hati-hati, tetes demi tetes, hingga muncul warna merah muda yang samar.",
+    },
+    {
+      id: "step6",
+      title: "Langkah 6: Hasil",
+      component: <Step6 />,
+      description:
+        "Catat pembacaan buret, hitung rata-rata titre, dan analisis hasil.",
+    },
   ];
 
   const [activeStep, setActiveStep] = useState("step0");
@@ -81,12 +80,12 @@ export default function Home() {
           {/* Intro */}
           <div className="text-center">
             <h2 className="font-bold text-3xl mb-4 text-blue-900">
-              Acid-Base Titration Experiment
+              Eksperimen Titrasi Asam-Basa
             </h2>
             <p className="mb-2">
               Untuk menentukan konsentrasi asam atau basa yang tidak diketahui dengan menetralkannya dengan basa atau asam yang konsentrasinya diketahui.
             </p>
-            <p className="mb-0">Acid + Base → Salt + Water</p>
+            <p className="mb-0">Asam + Basa → Garam + Air</p>
           </div>
 
           <div className="flex gap-8 items-start">
@@ -94,7 +93,7 @@ export default function Home() {
             <div className="flex-1 bg-white rounded-2xl border border-blue-200 shadow-lg p-4 min-h-[400px]">
               {steps.find((s) => s.id === activeStep)?.component ?? (
                 <p className="text-gray-500">
-                  Tidak ada simulation yang tersedia untuk langkah ini.
+                  Tidak ada simulasi yang tersedia untuk langkah ini.
                 </p>
               )}
             </div>
@@ -135,7 +134,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer className="flex justify-center items-center bg-blue-800 text-white p-4 mt-8 shadow-inner">
-        Informatics Engineering × Chemical Engineering 2025
+        Teknik Informatika × Teknik Kimia 2025
       </footer>
     </div>
   );

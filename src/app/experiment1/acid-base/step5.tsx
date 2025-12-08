@@ -40,7 +40,7 @@ export default function Step5() {
     <DragOrder
       items={shuffledItems}
       correctOrder={correctOrder}
-      title="Arrange the Titration Procedure Steps"
+      title="Susun Langkah Prosedur Titrasi"
     />
   );
 }

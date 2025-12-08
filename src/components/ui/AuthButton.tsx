@@ -69,13 +69,13 @@ export default function AuthButton() {
     return (
       <div className="flex items-center gap-4">
         <span className="text-sm text-gray-700 hidden sm:block">
-          Welcome, {profile?.full_name || user.email}
+          Selamat datang, {profile?.full_name || user.email}
         </span>
 
         <Link
           href="/profile"
           className="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full hover:bg-gray-200 transition"
-          aria-label="User Profile"
+          aria-label="Profil Pengguna"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +98,7 @@ export default function AuthButton() {
           onClick={handleLogout}
           className="px-4 py-2 text-sm border border-red-500 text-red-500 rounded-lg hover:bg-red-50 transition"
         >
-          Logout
+          Keluar
         </button>
       </div>
     );
@@ -111,13 +111,13 @@ export default function AuthButton() {
         href="/login"
         className="px-4 py-2 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50 transition"
       >
-        Login
+        Masuk
       </Link>
       <Link
         href="/signup"
         className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
       >
-        Register
+        Daftar
       </Link>
     </>
   );

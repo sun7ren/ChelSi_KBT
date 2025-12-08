@@ -4,18 +4,18 @@ import { useState } from "react";
 
 export default function Step2() {
   const chemicalList = [
-    { name: "Hydrochloric Acid (HCl)"},
-    { name: "Sodium Hydroxide (NaOH)"},
-    { name: "Phenolphthalein"},
-    { name: "Citric Acid (C₆H₈O₇)" },
-    { name: "Sodium Bicarbonate (NaHCO₃)" },
-    { name: "Sulfuric Acid (H₂SO₄)" },
-    { name: "Potassium Hydroxide (KOH)" },
-    { name: "Methyl Orange" },
-    { name: "Litmus Paper" },
+    { name: "Asam Klorida (HCl)" },
+    { name: "Natrium Hidroksida (NaOH)" },
+    { name: "Fenolftalein" },
+    { name: "Asam Sitrat (C₆H₈O₇)" },
+    { name: "Natrium Bikarbonat (NaHCO₃)" },
+    { name: "Asam Sulfat (H₂SO₄)" },
+    { name: "Kalium Hidroksida (KOH)" },
+    { name: "Metil Oranye" },
+    { name: "Kertas Lakmus" },
   ];
 
-  const correctAnswers = ["Hydrochloric Acid (HCl)", "Sodium Hydroxide (NaOH)", "Phenolphthalein"];
+  const correctAnswers = ["Asam Klorida (HCl)", "Natrium Hidroksida (NaOH)", "Fenolftalein"];
   const [selected, setSelected] = useState<string[]>([]);
   const [score, setScore] = useState<number | null>(null);
 
@@ -44,14 +44,13 @@ export default function Step2() {
             key={i}
             onClick={() => toggleSelect(a.name)}
             className={`group p-2 border rounded cursor-pointer relative flex items-center justify-center transition
-              ${
-                selected.includes(a.name)
-                  ? "border-blue-600 bg-blue-50"
-                  : "border-gray-300 hover:border-blue-400"
+              ${selected.includes(a.name)
+                ? "border-blue-600 bg-blue-50"
+                : "border-gray-300 hover:border-blue-400"
               }`}
           >
             <div className="w-28 h-28 flex items-center justify-center">
-              <h3> {a.name} </h3>
+              <h3 className="text-center text-sm font-medium"> {a.name} </h3>
             </div>
           </div>
         ))}

@@ -32,15 +32,15 @@ export default function LoginPage() {
   };
 
   return (
-    
+
     <AuthLayout>
       <div className="w-full max-w-md">
         <div className="mb-10 text-left">
           <h2 className="font-bold text-4xl text-blue-900">
-            Log in to your account
+            Masuk ke akun Anda
           </h2>
           <p className="text-gray-600 mt-3">
-            Welcome back! Please enter your details.
+            Selamat datang kembali! Silakan masukkan detail Anda.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export default function LoginPage() {
             <Input
               id="email"
               type="email"
-              placeholder="you@example.com"
+              placeholder="anda@contoh.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -67,7 +67,7 @@ export default function LoginPage() {
 
           <div className="space-y-2">
             <Label htmlFor="password" className="text-gray-700 font-semibold">
-              Password
+              Kata Sandi
             </Label>
             <Input
               id="password"
@@ -84,14 +84,14 @@ export default function LoginPage() {
             type="submit"
             className="w-full bg-blue-800 text-white font-bold py-3 rounded-lg hover:bg-blue-900 transition-colors text-base"
           >
-            Continue
+            Lanjutkan
           </Button>
         </form>
 
         <p className="text-center text-sm text-gray-600 mt-8">
-          Don't have an account?{' '}
+          Belum punya akun?{' '}
           <Link href="/signup" className="font-semibold text-blue-600 hover:underline">
-            Sign up
+            Daftar
           </Link>
         </p>
       </div>

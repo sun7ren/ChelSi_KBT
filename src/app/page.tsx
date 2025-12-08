@@ -65,9 +65,9 @@ export default function Home() {
             className="absolute inset-10 flex justify-start items-end pb-6"
             style={{ zIndex: 1 }}
           >
-            <button className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
+            <Link href="/learnmore" className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
               Learn More
-            </button>
+            </Link>
           </div>
         </div>
 

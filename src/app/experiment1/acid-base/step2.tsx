@@ -62,13 +62,13 @@ export default function Step2() {
         onClick={checkAnswer}
         className="mt-4 px-4 py-2 bg-blue-800 text-white rounded hover:bg-blue-700"
       >
-        Done with Step 2
+        Selesai dengan Langkah 2
       </button>
 
       {/* Score Message */}
       {score !== null && (
         <p className="mt-2 text-lg font-semibold">
-          You got {score} / {correctAnswers.length} correct!
+          Anda Mendapatkan {score} / {correctAnswers.length} benar!
         </p>
       )}
     </div>

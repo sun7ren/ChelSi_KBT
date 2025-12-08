@@ -17,14 +17,14 @@ export default function Step6() {
     const ans = parseFloat(studentAnswer);
 
     if (isNaN(init) || isNaN(fin) || isNaN(ans)) {
-      setScore("Please enter valid numbers.");
+      setScore("Harap masukkan angka yang valid.");
       return;
     }
 
     const V_NaOH = fin - init;
 
     if (V_NaOH <= 0) {
-      setScore("Final reading must be greater than initial.");
+      setScore("Pembacaan akhir harus lebih besar dari awal.");
       return;
     }
 
@@ -32,30 +32,30 @@ export default function Step6() {
 
     // ±0.005 tolerance
     if (Math.abs(ans - trueM) < 0.005) {
-      setScore(`Correct! Your calculated M(HCl) = ${ans.toFixed(3)} M`);
+      setScore(`Benar! Kalkulasi Anda Adalah M(HCl) = ${ans.toFixed(3)} M`);
     } else {
       setScore(
-        `Incorrect. Your answer = ${ans.toFixed(3)} M, correct value = ${trueM.toFixed(3)} M`
+        `Tidak Benar. Jawaban Anda = ${ans.toFixed(3)} M, Angka Benar = ${trueM.toFixed(3)} M`
       );
     }
   }
 
 return (
   <div className="space-y-6 bg-white p-6 rounded-lg border border-gray-300">
-    <h2 className="text-xl font-semibold">Step 6: Results & Calculation</h2>
+    <h2 className="text-xl font-semibold">Step 6: Hasil & Perhitungan</h2>
 
     <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-      <h3 className="font-semibold text-lg mb-2">Given Information</h3>
+      <h3 className="font-semibold text-lg mb-2">Informasi yang Tersedia</h3>
       <p>M<sub>NaOH</sub> = <b>{M_NaOH.toFixed(3)} M</b></p>
       <p>V<sub>HCl</sub> = <b>{V_HCl.toFixed(1)} mL</b></p>
 
-      <h3 className="font-semibold text-lg mt-4 mb-2">Formula Used</h3>
+      <h3 className="font-semibold text-lg mt-4 mb-2">Rumus yang Digunakan</h3>
       <p className="italic text-gray-700">
         M<sub>NaOH</sub> × V<sub>NaOH</sub> = M<sub>HCl</sub> × V<sub>HCl</sub>
       </p>
 
       <p className="mt-2 text-gray-700">
-        Rearranged to find the unknown molarity:
+        Disusun ulang untuk menemukan molaritas yang tidak diketahui:
       </p>
 
       <p className="font-medium">
@@ -64,12 +64,12 @@ return (
     </div>
 
     <p className="text-gray-700">
-      Enter your burette readings and your calculated molarity below.
+      Masukkan hasil pembacaan buret dan molaritas yang Anda hitung di bawah ini.
     </p>
 
     <div className="grid grid-cols-2 gap-4">
       <div>
-        <p className="font-medium">Initial burette reading (mL)</p>
+        <p className="font-medium">Pembacaan buret awal (mL)</p>
         <input
           type="number"
           step="0.01"
@@ -80,7 +80,7 @@ return (
       </div>
 
       <div>
-        <p className="font-medium">Final burette reading (mL)</p>
+        <p className="font-medium">Pembacaan buret akhir (mL)</p>
         <input
           type="number"
           step="0.01"
@@ -91,7 +91,7 @@ return (
       </div>
 
       <div className="col-span-2">
-        <p className="font-medium">Your calculated M(HCl)</p>
+        <p className="font-medium">Kalkulasi Anda M(HCl)</p>
         <input
           type="number"
           step="0.0001"
@@ -106,7 +106,7 @@ return (
       onClick={calculate}
       className="mt-4 px-4 py-2 bg-blue-800 text-white rounded hover:bg-blue-700"
     >
-      Check Answer
+      Periksa Jawaban
     </button>
 
     {score && (

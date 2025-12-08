@@ -18,11 +18,11 @@ function shuffleArray<T>(array: T[]): T[] {
 
 export default function Step4() {
   const items: Item[] = [
-    { id: "stand", label: "Clamp the burette onto the retort stand" },
-    { id: "fill", label: "Fill burette with NaOH solution" },
-    { id: "removeBubbles", label: "Remove air bubbles from the burette tip" },
-    { id: "indicator", label: "Add 2–3 drops of phenolphthalein to HCl" },
-    { id: "position", label: "Place conical flask under burette" },
+    { id: "stand", label: "Jepit buret pada dudukan retort" },
+    { id: "fill", label: "Isi buret dengan larutan NaOH" },
+    { id: "removeBubbles", label: "Hilangkan gelembung udara dari ujung buret" },
+    { id: "indicator", label: "Tambahkan 2–3 tetes fenolftalein ke HCl" },
+    { id: "position", label: "Letakkan labu erlenmeyer di bawah buret" },
   ];
 
   const correctOrder = [

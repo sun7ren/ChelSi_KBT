@@ -17,11 +17,11 @@ function shuffleArray<T>(array: T[]): T[] {
   return arr;
 }
   const items: Item[] = [
-    { id: "goggles", label: "Wear safety goggles" },
-    { id: "rinse", label: "Rinse burette with distilled water" },
-    { id: "rinseNaOH", label: "Rinse burette with NaOH solution" },
-    { id: "pipetteRinse", label: "Rinse pipette with HCl" },
-    { id: "measureAcid", label: "Pipette 25 mL of HCl into conical flask" },
+    { id: "goggles", label: "Kenakan kacamata pengaman" },
+    { id: "rinse", label: "Bilas buret dengan air suling" },
+    { id: "rinseNaOH", label: "Bilas buret dengan larutan NaOH" },
+    { id: "pipetteRinse", label: "Bilas pipet dengan HCl" },
+    { id: "measureAcid", label: "Pipet 25 mL HCl ke dalam labu erlenmeyer" },
   ];
 
   const correctOrder = [

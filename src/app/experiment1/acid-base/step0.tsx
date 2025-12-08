@@ -18,7 +18,7 @@ export default function Step0() {
       {/* Video Embed */}
       <div className="aspect-video w-full rounded-lg overflow-hidden border border-gray-300 shadow-sm">
         <iframe
-          src="https://www.youtube.com/embed/sFpFCPTDv2w"
+          src="https://www.youtube.com/embed/4E8Pp5z6ZBM"
           width="100%"
           height="100%"
           allow="autoplay"

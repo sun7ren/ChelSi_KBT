@@ -20,51 +20,52 @@ import AppHeader from "@/components/ui/AppHeader";
 export default function Home() {
   const steps = [
     {
-      id: "step0",
-      title: "Step 0: Video Introduction",
-      component: <Step0 />,
-      description: "Introduction to Acid-Base Titration experiment.",
-    },
-    {
-      id: "step1",
-      title: "Step 1: Apparatus",
-      component: <Step1 />,
-      description: "Select 5 apparatus to be used for acid-base neutralization.",
-    },
-    {
-      id: "step2",
-      title: "Step 2: Chemicals",
-      component: <Step2 />,
-      description: "Identify the three chemicals needed",
-    },
-    {
-      id: "step3",
-      title: "Step 3: Pre-Experiment",
-      component: <Step3 />,
-      description:
-        "Prior to starting, take precautionary actions such as wearing goggles and rinsing apparatus.",
-    },
-    {
-      id: "step4",
-      title: "Step 4: Experiment",
-      component: <Step4 />,
-      description:
-        "Set up the apparatus, prepare solutions, and begin titration by adding base to acid slowly.",
-    },
-    {
-      id: "step5",
-      title: "Step 5: Titration",
-      component: <Step5 />,
-      description:
-        "Approach the endpoint carefully, drop by drop, until a faint pink color appears.",
-    },
-    {
-      id: "step6",
-      title: "Step 6: Results",
-      component: <Step6 />,
-      description:
-        "Record burette readings, calculate average titre, and analyze results.",
-    },
+  id: "step0",
+  title: "Langkah 0: Video Pengantar",
+  component: <Step0 />,
+  description: "Pengantar untuk percobaan Titrasi Asam-Basa.",
+},
+{
+  id: "step1",
+  title: "Langkah 1: Alat",
+  component: <Step1 />,
+  description: "Pilih 5 alat yang akan digunakan untuk proses netralisasi asam-basa.",
+},
+{
+  id: "step2",
+  title: "Langkah 2: Bahan Kimia",
+  component: <Step2 />,
+  description: "Identifikasi tiga bahan kimia yang dibutuhkan.",
+},
+{
+  id: "step3",
+  title: "Langkah 3: Pra-Percobaan",
+  component: <Step3 />,
+  description:
+    "Sebelum memulai, lakukan tindakan pencegahan seperti memakai kacamata pelindung dan membilas alat.",
+},
+{
+  id: "step4",
+  title: "Langkah 4: Percobaan",
+  component: <Step4 />,
+  description:
+    "Siapkan alat, persiapkan larutan, dan mulai titrasi dengan menambahkan basa ke asam secara perlahan.",
+},
+{
+  id: "step5",
+  title: "Langkah 5: Titrasi",
+  component: <Step5 />,
+  description:
+    "Dekati titik akhir secara hati-hati, tetes demi tetes, hingga muncul warna merah muda yang samar.",
+},
+{
+  id: "step6",
+  title: "Langkah 6: Hasil",
+  component: <Step6 />,
+  description:
+    "Catat pembacaan buret, hitung rata-rata titre, dan analisis hasil.",
+},
+
   ];
 
   const [activeStep, setActiveStep] = useState("step0");
@@ -83,8 +84,7 @@ export default function Home() {
               Acid-Base Titration Experiment
             </h2>
             <p className="mb-2">
-              To determine the concentration of an unknown acid or base by
-              neutralizing it with a base or acid of known concentration.
+              Untuk menentukan konsentrasi asam atau basa yang tidak diketahui dengan menetralkannya dengan basa atau asam yang konsentrasinya diketahui.
             </p>
             <p className="mb-0">Acid + Base → Salt + Water</p>
           </div>
@@ -94,7 +94,7 @@ export default function Home() {
             <div className="flex-1 bg-white rounded-2xl border border-blue-200 shadow-lg p-4 min-h-[400px]">
               {steps.find((s) => s.id === activeStep)?.component ?? (
                 <p className="text-gray-500">
-                  No simulation available for this step.
+                  Tidak ada simulation yang tersedia untuk langkah ini.
                 </p>
               )}
             </div>

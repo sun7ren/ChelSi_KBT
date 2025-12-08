@@ -19,11 +19,11 @@ function shuffleArray<T>(array: T[]): T[] {
 
 export default function Step5() {
   const items: Item[] = [
-    { id: "start", label: "Slowly release NaOH from the burette" },
-    { id: "swirl", label: "Continuously swirl the conical flask" },
-    { id: "approach", label: "Slow down as the pink color persists briefly" },
-    { id: "dropwise", label: "Add NaOH drop by drop" },
-    { id: "endpoint", label: "Stop at faint, permanent pink for 30 seconds" },
+    { id: "start", label: "Lepaskan NaOH secara perlahan dari buret" },
+    { id: "swirl", label: "Putar labu kerucut secara terus-menerus" },
+    { id: "approach", label: "Perlambat laju reaksi hingga warna merah muda bertahan sebentar" },
+    { id: "dropwise", label: "Tambahkan NaOH setetes demi setetes" },
+    { id: "endpoint", label: "Berhenti saat warna merah muda samar dan permanen muncul selama 30 detik" },
   ];
 
   const correctOrder: string[] = [

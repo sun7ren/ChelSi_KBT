@@ -50,7 +50,7 @@ export default function DragOrder({ items, correctOrder, title }: any) {
         onClick={check}
         className="px-4 py-2 bg-blue-800 text-white rounded hover:bg-blue-700"
       >
-        Check Order
+        Periksa Pesanan
       </button>
 
       {score !== null && (

@@ -93,7 +93,7 @@ export default function LoggedInHome() {
     <div className="font-sans grid grid-rows-[auto_1fr_auto] min-h-screen bg-gray-50">
       <AppHeader />
 
-      <main className="row-start-2 flex justify-center px-4 pt-10">
+      <main className="row-start-2 flex justify-center px-4 pt-6 md:pt-10">
         <div className="w-full max-w-6xl flex flex-col gap-6">
           <div className="flex items-end justify-between px-6">
             <div>
@@ -113,7 +113,7 @@ export default function LoggedInHome() {
               {labs.map((lab) => (
                 <Link
                   key={lab.id}
-                  href={lab.href || `/experiment/${lab.id}`}
+                  href="experiment1"
                   className="block"
                 >
                   <CourseLikeCard

@@ -88,9 +88,9 @@ export default function Home() {
             <p className="mb-0">Asam + Basa → Garam + Air</p>
           </div>
 
-          <div className="flex gap-8 items-start">
+          <div className="flex flex-col md:flex-row gap-8 items-start">
             {/* Left: Simulation Screen */}
-            <div className="flex-1 bg-white rounded-2xl border border-blue-200 shadow-lg p-4 min-h-[400px]">
+            <div className={`flex-1 w-full bg-white rounded-2xl border border-blue-200 shadow-lg p-4 min-h-[400px] ${activeStep === "step0" ? "flex flex-col justify-center" : ""}`}>
               {steps.find((s) => s.id === activeStep)?.component ?? (
                 <p className="text-gray-500">
                   Tidak ada simulasi yang tersedia untuk langkah ini.
@@ -99,7 +99,7 @@ export default function Home() {
             </div>
 
             {/* Right: Steps Accordion */}
-            <div className="w-96">
+            <div className="w-full md:w-96">
               <Accordion
                 type="single"
                 collapsible

@@ -18,9 +18,9 @@ export default function AboutPage() {
         }
       />
 
-      <main className="flex-1 w-full max-w-6xl mx-auto py-12">
-        <div className="bg-white rounded-2xl shadow-sm p-8 md:p-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">Tentang ChelSi</h1>
+      <main className="flex-1 w-full max-w-6xl mx-auto py-6 md:py-12 px-4 md:px-0">
+        <div className="bg-white rounded-2xl shadow-sm p-6 md:p-12">
+          <h1 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6">Tentang ChelSi</h1>
 
           <div className="prose max-w-none text-gray-700 space-y-6">
             <p className="text-lg leading-relaxed">
@@ -60,10 +60,10 @@ export default function AboutPage() {
 
         <div className="mt-12 flex justify-center">
           <Link
-            href="/signup"
+            href="/payment"
             className="px-8 py-3 bg-blue-600 text-white font-bold rounded-lg shadow-lg hover:bg-blue-700 hover:shadow-xl transition transform hover:-translate-y-0.5"
           >
-            Mulai Gratis
+            Mulai Sekarang
           </Link>
         </div>
       </main>

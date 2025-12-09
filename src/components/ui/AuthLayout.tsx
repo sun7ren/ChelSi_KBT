@@ -12,7 +12,7 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
         <div className="w-full max-w-6xl grid md:grid-cols-2 items-center">
 
           {/* Left Column: Illustration */}
-          <div className="hidden md:flex items-center justify-center p-12">
+          <div className="hidden md:flex items-center justify-center p-6 md:p-12">
             <Image
               src="/3.gif"
               alt="Animated chemistry experiment"
@@ -24,7 +24,7 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
           </div>
 
           {/* Right Column: Form Area (your page content) */}
-          <div className="flex items-center justify-center p-8">
+          <div className="flex items-center justify-center p-4 md:p-8">
             {children}
           </div>
         </div>
